@@ -1,0 +1,45 @@
+Create a furniture_store database
+
+CREATE TABLE furniture_store (id INTEGER PRIMARY KEY, name TEXT, cost INTEGER, price INTEGER, profit INTEGER, made INTEGER, sold INTEGER);
+
+INSERT INTO furniture_store  VALUES (1, "Montessori Bed", 50, 200, 150, 5, 5);
+INSERT INTO furniture_store VALUES (2, "Modern Single Shelf", 35, 90, 55, 5, 3
+);
+INSERT INTO furniture_store VALUES (3, "Modern Double Shelf", 50, 120, 70, 5, 4);
+INSERT INTO furniture_store VALUES (4, "Boho Bookshelf", 80, 170, 90, 5, 2);
+INSERT INTO furniture_store VALUES (5, "Boho Bookshelf with Drawers", 120, 250, 130, 5, 3);
+INSERT INTO furniture_store VALUES (6, "Barbecue Table", 35, 60, 25, 5, 3);
+INSERT INTO furniture_store VALUES (7, "PicNic Table", 120, 200, 80, 5, 4);
+INSERT INTO furniture_store  VALUES (8, "Balcony Modern Chair", 120, 150, 30, 5, 3);
+INSERT INTO furniture_store  VALUES (9, "CD Organizer", 30, 60, 30, 5, 2);
+INSERT INTO furniture_store  VALUES (10, "DVD Organizer", 35, 70, 35, 5, 2);
+INSERT INTO furniture_store  VALUES (11, "Simple Room Divider", 150, 300, 150, 5, 1);
+INSERT INTO furniture_store  VALUES (12, "Room Divider with Tv Stand", 210, 380, 170, 5, 5);
+INSERT INTO furniture_store  VALUES (13, "Wood Lamp small", 35, 70, 35, 5, 2);
+INSERT INTO furniture_store  VALUES (14, "Wood_lamp_medium", 45, 80, 35, 5, 2);
+INSERT INTO furniture_store  VALUES (15, "Wood-Lamp_large", 55, 100, 45, 5, 2);
+INSERT INTO furniture_store  VALUES (16, "Wood_chandelier", 100, 200, 100, 5, 2);
+INSERT INTO furniture_store  VALUES (17, "Wood Pendant", 35, 70, 35, 5, 2);
+
+--display the database ordered by price.
+SELECT * FROM furniture_store ORDER BY price;
+
+--display the items that sold more than 3 items.
+SELECT * FROM furniture_store WHERE sold > 3 ORDER BY sold DESC;
+
+--Calculate the cost of all items
+SELECT SUM(cost*made)FROM furniture_store;
+
+--Displau the sum of price.
+SELECT SUM(price*made) FROM furniture_store;
+
+--Estimate the store's total profit if all the items were sold.
+SELECT SUM(profit*made) FROM furniture_store;
+
+--Calculate the profit already made.
+SELECT SUM (profit*sold) FROM furniture_store;
+
+--Display the profit made by every item sold.
+SELECT name, (profit*sold) FROM furniture_store ORDER BY profit DESC; 
+
+
