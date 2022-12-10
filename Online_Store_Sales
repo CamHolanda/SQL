@@ -179,5 +179,14 @@ WHERE country = "United states" ;
 SELECT country, COUNT(*) as Transactions
 FROM sales
 GROUP BY country
-HAVING transactions > 10
+HAVING transactions > 10;
+
+/** Rows from the sales table where the price is greater than 3000 and the payment_type is either 'Mastercard' or 'Visa'.**/
+
+SELECT * FROM sales
+WHERE price > 3000 AND (payment_type = "Mastercard" OR payment_type = "Visa");
+
+
+
+
 
